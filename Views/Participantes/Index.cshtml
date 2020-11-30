@@ -1,0 +1,69 @@
+﻿@model AAPC.Models.TreinoViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Participantes:</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="Participantes" asp-action="Index" method="get">
+    <p>
+        <!-- <select asp-for="TreinoParticipante" asp-items="Model.Treinos">
+             <option value="">All</option>
+    </select>-->
+        Dia:
+        <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Buscar" />
+    </p>
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LParticipantes[0].Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LParticipantes[0].Sobrenome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LParticipantes[0].Nascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LParticipantes[0].DiaDoTreino)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LParticipantes)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sobrenome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaDoTreino)
+            </td>
+
+            <td>
+                <!-- <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |-->
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
