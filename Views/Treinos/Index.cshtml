@@ -9,48 +9,80 @@
 </div>
 
 <!-- <div class="text-center">
- <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fradiocorredor.com.br%2Fesportes%2Fcorrendo-para-sua-saude%2F&psig=AOvVaw0GVbEk1WVsWEDjXMf8LpwT&ust=1606834343245000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIisqMXCqu0CFQAAAAAdAAAAABAD/>
-     <img src="~\Assets\corrida.jpg" />
-     <img src='@Url.Content("~/Assets/corrida.jpg")'/>
+    <img src="~\Assets\corrida.jpg" />
+     
  </div>-->
 <!--
 <p>
     <a asp-action="Create">Create New</a>
 </p>-->
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Dia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Horario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Local)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Dia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Horario)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Local)
-                </td>
-                <td>
-                    <!--<<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |-->
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-controller="Participantes" asp-action="Create">Inscreva-se</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Dia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Horario)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Local)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Horario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Local)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+ 
+        <div class="col-md-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a asp-controller="TreinoTercas" asp-action="Index">Datalhes e Inscrição</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a asp-controller="TreinoQuintas" asp-action="Index">Datalhes e Inscrição</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a asp-controller="TreinoSabadoes" asp-action="Index">Datalhes e Inscrição</a>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>

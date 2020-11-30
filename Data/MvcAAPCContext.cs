@@ -16,6 +16,10 @@ namespace AAPC.Data
 
         public DbSet<Participante> Participante { get; set; }
 
+        public DbSet<TreinoTerca> ParticipanteTreinoTerca { get; set; }
+        public DbSet<TreinoQuinta> ParticipanteTreinoQuinta { get; set; }
+        public DbSet<TreinoSabado> ParticipanteTreinoSabado { get; set; }
+
         public DbSet<Treino> Treino { get; set; }
     }
 }

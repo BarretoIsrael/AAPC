@@ -17,50 +17,122 @@ namespace AAPC.Models
                     DbContextOptions<MvcAAPCContext>>()))
             {
                 // Look for any movies.
-                if (context.Participante.Any())
+                if (context.ParticipanteTreinoTerca.Any())
                 {
                     return;   // DB has been seeded
                 }
 
-                context.Participante.AddRange(
-                    new Participante
+                context.ParticipanteTreinoTerca.AddRange(
+                    new TreinoTerca
                     {
-                        Nome = "Participante1",
-                        Sobrenome = "Sobrenome1",
+                        Nome = "Gisele",
+                        Sobrenome = "Souza",
                         Nascimento = DateTime.Parse("1989-2-12"),
-                        DiaDoTreino = "Terca-Feira"
-                        //Genre = "Romantic Comedy",
-                        //Price = 7.99M
                     },
 
-                    new Participante
+                    new TreinoTerca
                     {
-                        Nome = "Participante2",
-                        Sobrenome = "Sobrenome2",
+                        Nome = "Marina",
+                        Sobrenome = "Rodrigues",
                         Nascimento = DateTime.Parse("1989-2-12"),
-                        DiaDoTreino = "Quinta-Feira"
-                        //Genre = "Romantic Comedy",
-                        //Price = 7.99M
                     },
 
-                    new Participante
+                    new TreinoTerca
                     {
-                        Nome = "Participante3",
-                        Sobrenome = "Sobrenome3",
+                        Nome = "João",
+                        Sobrenome = "Nascimento",
                         Nascimento = DateTime.Parse("1989-2-12"),
-                        DiaDoTreino = "Sabado"
-                        //Genre = "Romantic Comedy",
-                        //Price = 7.99M
                     },
 
-                    new Participante
+                    new TreinoTerca
                     {
-                        Nome = "Participante4",
-                        Sobrenome = "Sobrenome4",
+                        Nome = "Romario",
+                        Sobrenome = "Santos",
                         Nascimento = DateTime.Parse("1989-2-12"),
-                        DiaDoTreino = "Terca-Feira"
-                        //Genre = "Romantic Comedy",
-                        //Price = 7.99M
+                    }
+                );
+                context.SaveChanges();
+            }
+
+            using (var context = new MvcAAPCContext(
+                serviceProvider.GetRequiredService<
+                    DbContextOptions<MvcAAPCContext>>()))
+            {
+                // Look for any movies.
+                if (context.ParticipanteTreinoQuinta.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
+                context.ParticipanteTreinoQuinta.AddRange(
+                    new TreinoQuinta
+                    {
+                        Nome = "Juliana",
+                        Sobrenome = "Morais",
+                        Nascimento = DateTime.Parse("1989-2-12"),
+                    },
+
+                    new TreinoQuinta
+                    {
+                        Nome = "Lucas",
+                        Sobrenome = "Silva",
+                        Nascimento = DateTime.Parse("1989-2-12"),
+                    },
+
+                    new TreinoQuinta
+                    {
+                        Nome = "Camila",
+                        Sobrenome = "Paraguaçu",
+                        Nascimento = DateTime.Parse("1995-2-12"),
+                    },
+
+                    new TreinoQuinta
+                    {
+                        Nome = "Israel",
+                        Sobrenome = "Barreto",
+                        Nascimento = DateTime.Parse("1989-2-12"),
+                    }
+                );
+                context.SaveChanges();
+            }
+
+            using (var context = new MvcAAPCContext(
+                serviceProvider.GetRequiredService<
+                    DbContextOptions<MvcAAPCContext>>()))
+            {
+                // Look for any movies.
+                if (context.ParticipanteTreinoSabado.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
+                context.ParticipanteTreinoSabado.AddRange(
+                    new TreinoSabado
+                    {
+                        Nome = "Mauricio",
+                        Sobrenome = "Oliveira",
+                        Nascimento = DateTime.Parse("1989-2-12"),
+                    },
+
+                    new TreinoSabado
+                    {
+                        Nome = "Talita",
+                        Sobrenome = "Nogueira",
+                        Nascimento = DateTime.Parse("1989-2-12"),
+                    },
+
+                    new TreinoSabado
+                    {
+                        Nome = "Ragnar",
+                        Sobrenome = "Lothbrok",
+                        Nascimento = DateTime.Parse("1989-2-12"),
+                    },
+
+                    new TreinoSabado
+                    {
+                        Nome = "Diana",
+                        Sobrenome = "De Temiscera",
+                        Nascimento = DateTime.Parse("1989-2-12"),
                     }
                 );
                 context.SaveChanges();
@@ -80,7 +152,7 @@ namespace AAPC.Models
                     new Treino
                     {
                         Dia = "Terça-Feira",
-                        Horario = "20h",
+                        Horario = "20:00h",
                         Local = "Imbui"
                         //Genre = "Romantic Comedy",
                         //Price = 7.99M
@@ -89,7 +161,16 @@ namespace AAPC.Models
                     new Treino
                     {
                         Dia = "Quinta-Feira",
-                        Horario = "20h",
+                        Horario = "20:00h",
+                        Local = "Imbui"
+                        //Genre = "Romantic Comedy",
+                        //Price = 7.99M
+                    },
+
+                    new Treino
+                    {
+                        Dia = "Sabado",
+                        Horario = "19:30h",
                         Local = "Imbui"
                         //Genre = "Romantic Comedy",
                         //Price = 7.99M

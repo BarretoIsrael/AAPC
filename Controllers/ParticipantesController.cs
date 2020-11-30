@@ -78,7 +78,7 @@ namespace AAPC.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Sobrenome,Nascimento")] Participante participante)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Sobrenome,Nascimento,DiaDoTreino")] Participante participante)
         {
             if (ModelState.IsValid) //,GeneroParticipante,Telefone,Endereco,Bairro,Cidade,CEP
             {
@@ -110,7 +110,7 @@ namespace AAPC.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Sobrenome,Nascimento")] Participante participante)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Sobrenome,Nascimento,DiaDoTreino")] Participante participante)
         {
             if (id != participante.Id) //,GeneroParticipante,Telefone,Endereco,Bairro,Cidade,CEP
             {

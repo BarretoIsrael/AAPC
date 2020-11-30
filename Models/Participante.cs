@@ -20,9 +20,7 @@ namespace AAPC.Models
         [Display(Name = "Nascimento")]
         [DataType(DataType.Date)]
         public DateTime Nascimento { get; set; }
-        [NotMapped]
-        public SelectList Genero { get; set; }
-        //public string GeneroParticipante { get; set; }
+        
         public string DiaDoTreino { get; set; }
         //public DayOfWeek DayOfWeek { get; set; }
 
