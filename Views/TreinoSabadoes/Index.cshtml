@@ -1,26 +1,34 @@
 ﻿@model AAPC.Models.TreinoViewModel
 
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Index"; }
 
-    <div class="text-center">
-        <h1>Detalhes do Treino de Sábado</h1>
-        <hr>
-        <h1>19:30h | Imbuí</h1>
+<div class="text-center">
+    <h3>Detalhes do Treino de Sábado</h3>
+    <img class="imglogo" src="~/Images/imbui.jpg"> <br />
+    <h4>19:30h | Imbuí</h4>
 
-        <h3>Participantes Inscritos:</h3>
+    <h3>Participantes Inscritos:</h3>
+</div>
+
+<div class="text-right">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <!--Pesquisa de dados-->
+            <form asp-controller="TreinoTercas" asp-action="Index" method="get">
+                <p>
+
+                    <input asp-for="SearchString" class="form-control" placeholder="Busca por Nome:" />
+                    <!--<input type="text" asp-for="SearchString" />-->
+                    <input type="submit" value="Buscar" class="btn btn-success" />
+                </p>
+            </form>
+        </div>
     </div>
-    <div class="text-right">
-        <!--Pesquisa de dados-->
-        <form asp-controller="TreinoSabadoes" asp-action="Index" method="get">
-            <p>
-                Nome:
-                <input type="text" asp-for="SearchString" />
-                <input type="submit" value="Buscar" />
-            </p>
-        </form>
-    </div>
+</div>
+
 <p>
     <a asp-action="Create">Inscreva-se!</a>
 </p>
@@ -43,23 +51,22 @@
     <tbody>
         @foreach (var item in Model.LPTSabado)
         {
-        <tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nome)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Sobrenome)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nascimento)
+    </td>
+    <!--
             <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sobrenome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nascimento)
-            </td>
-            <!--
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td> -->
-        </tr>
-        }
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td> -->
+</tr>}
     </tbody>
 </table>
